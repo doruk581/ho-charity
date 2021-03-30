@@ -19,17 +19,17 @@ namespace Ho.Charity.Business
 
         Task<CharityOrganizationResponse> GetCharityInformation(Guid id);
     }
-    
-    
+
+
     public class CharityOrganizationService : ICharityOrganizationService
     {
-
         private readonly CharityOrganizationDbContext _dbContext;
         private readonly ICharityOrganizationFactory _charityOrganizationFactory;
         private readonly IMapper _mapper;
 
 
-        public CharityOrganizationService(CharityOrganizationDbContext dbContext, ICharityOrganizationFactory charityOrganizationFactory, IMapper mapper)
+        public CharityOrganizationService(CharityOrganizationDbContext dbContext,
+            ICharityOrganizationFactory charityOrganizationFactory, IMapper mapper)
         {
             _dbContext = dbContext;
             _charityOrganizationFactory = charityOrganizationFactory;
@@ -54,10 +54,10 @@ namespace Ho.Charity.Business
         {
             CharityOrganization charityOrganization =
                 await _dbContext.CharityOrganizations.FirstOrDefaultAsync(ch => ch.Id.Equals(request.Id));
-            
+
             ControlExistenceOfCharityInfomation(charityOrganization);
-            
-            _charityOrganizationFactory.ReConstituteFrom(charityOrganization,request);
+
+            _charityOrganizationFactory.ReConstituteFrom(charityOrganization, request);
 
             await _dbContext.SaveChangesAsync();
 
@@ -68,7 +68,7 @@ namespace Ho.Charity.Business
         {
             CharityOrganization charityOrganization =
                 await _dbContext.CharityOrganizations.FirstOrDefaultAsync(ch => ch.Id.Equals(Guid.Parse(id)));
-            
+
             ControlExistenceOfCharityInfomation(charityOrganization);
 
             charityOrganization.IsActive = false;
@@ -82,7 +82,8 @@ namespace Ho.Charity.Business
         {
             if (charityOrganization == null)
             {
-                throw new CharityOrganizationNotFoundException("CharityOrganization not found!", 90001, "CharityOrganizationNotExist");
+                throw new CharityOrganizationNotFoundException("CharityOrganization not found!", 90001,
+                    "CharityOrganizationNotExist");
             }
         }
 

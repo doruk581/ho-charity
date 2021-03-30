@@ -13,7 +13,7 @@ namespace Ho.Charity.Persistence
         {
             base.OnModelCreating(builder);
         }
-        
+
         public DbSet<CharityOrganization> CharityOrganizations { get; set; }
     }
 }

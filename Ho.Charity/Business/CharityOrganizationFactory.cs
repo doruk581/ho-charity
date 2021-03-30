@@ -4,13 +4,13 @@ using Ho.Charity.Model;
 
 namespace Ho.Charity.Business
 {
-
     public interface ICharityOrganizationFactory
     {
         CharityOrganization CreateFrom(CharityOrganizationRequest request);
 
-        void ReConstituteFrom(CharityOrganization charityOrganization,UpdateCharityOrganizationRequest request);
+        void ReConstituteFrom(CharityOrganization charityOrganization, UpdateCharityOrganizationRequest request);
     }
+
     public class CharityOrganizationFactory : ICharityOrganizationFactory
     {
         public CharityOrganization CreateFrom(CharityOrganizationRequest request)

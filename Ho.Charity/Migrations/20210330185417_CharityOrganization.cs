@@ -14,7 +14,8 @@ namespace Ho.Charity.Migrations
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     OrganizationName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     OrganizationAuthorizedPersonEmail = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    OrganizationAuthorizedPersonPhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    OrganizationAuthorizedPersonPhoneNumber =
+                        table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Address = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Iban = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     IsActive = table.Column<bool>(type: "bit", nullable: false),
@@ -25,10 +26,7 @@ namespace Ho.Charity.Migrations
                     SubMerchantKey = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     MerchantId = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_CharityOrganizations", x => x.Id);
-                });
+                constraints: table => { table.PrimaryKey("PK_CharityOrganizations", x => x.Id); });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

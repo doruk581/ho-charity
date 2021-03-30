@@ -28,7 +28,7 @@ namespace Ho.Charity
         }
 
         public IConfiguration Configuration { get; }
-        
+
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers()
@@ -44,12 +44,12 @@ namespace Ho.Charity
 
             services
                 .AddScoped<ICharityOrganizationService, CharityOrganizationService>()
-                .AddScoped<ICharityOrganizationFactory,CharityOrganizationFactory>()
+                .AddScoped<ICharityOrganizationFactory, CharityOrganizationFactory>()
                 .AddHealthChecks();
-            
+
             services.AddAutoMapper(typeof(Startup));
 
-            
+
             services.AddCors(options =>
             {
                 options.AddPolicy("CorsPolicy",
@@ -82,8 +82,8 @@ namespace Ho.Charity
             app.UseRouting();
 
             app.UseCors("CorsPolicy");
-            
-            
+
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
