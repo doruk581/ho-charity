@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+        <RootNamespace>Ho.Charity</RootNamespace>
+        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+        <UserSecretsId>c1eb7b70-530f-45d9-92bc-7616800f0f9a</UserSecretsId>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.0" />
+        <PackageReference Include="HiperRestApiPack" Version="2.2.3" />
+        <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.17.0" />
+        <PackageReference Include="Microsoft.ApplicationInsights.Kubernetes" Version="1.1.4" />
+        <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="5.0.2" />
+        <PackageReference Include="HiperServiceResultHandler" Version="1.0.0" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Analyzers" Version="5.0.2" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.2">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.IO.RecyclableMemoryStream" Version="1.4.0" />
+        <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.9" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.2" />
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="5.5.1" />
+        <PackageReference Include="MassTransit.AspNetCore" Version="7.0.7" />
+        <PackageReference Include="MassTransit.Azure.ServiceBus.Core" Version="7.0.7" />
+    </ItemGroup>
+    <ItemGroup>
+        <_ContentIncludedByDefault Remove="Properties\launchSettings.json" />
+    </ItemGroup>
+</Project>
