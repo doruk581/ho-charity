@@ -48,7 +48,7 @@ namespace Ho.Charity.Controller
         public async Task<IActionResult> UpdateCharityOrganization([FromBody] UpdateCharityOrganizationRequest request)
         {
             var result = await _charityOrganizationService.PatchCharityInformation(request);
-            return Ok(result);
+            return this.Result(result);
         }
 
         [HttpDelete("{id}")]
