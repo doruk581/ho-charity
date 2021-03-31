@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using AutoMapper;
 using HiperServiceResultHandler;
 using Ho.Charity.Business;
@@ -9,7 +5,6 @@ using Ho.Charity.Persistence;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -17,6 +12,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
+using HiperRestApiPack;
 
 namespace Ho.Charity
 {
@@ -45,6 +41,7 @@ namespace Ho.Charity
             services
                 .AddScoped<ICharityOrganizationService, CharityOrganizationService>()
                 .AddScoped<ICharityOrganizationFactory, CharityOrganizationFactory>()
+                .AddHiperApiPackEf()
                 .AddHealthChecks();
 
             services.AddAutoMapper(typeof(Startup));

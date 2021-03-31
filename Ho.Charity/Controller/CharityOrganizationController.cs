@@ -1,5 +1,6 @@
 using System;
 using System.Threading.Tasks;
+using HiperRestApiPack;
 using HiperServiceResultHandler;
 using Ho.Charity.Business;
 using Ho.Charity.Model;
@@ -12,14 +13,25 @@ namespace Ho.Charity.Controller
     public class CharityOrganizationController : ControllerBase
     {
         private readonly ICharityOrganizationService _charityOrganizationService;
+        private readonly IFilteredQuery _filteredQuery;
 
-        public CharityOrganizationController(ICharityOrganizationService charityOrganizationService)
+        public CharityOrganizationController(ICharityOrganizationService charityOrganizationService,
+            IFilteredQuery filteredQuery)
         {
             _charityOrganizationService = charityOrganizationService;
+            _filteredQuery = filteredQuery;
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetAll([FromQuery] CharityOrganizationRequest request)
+        {
+            var query = _charityOrganizationService.Get(request);
+            var result = await _filteredQuery.ToPageList(query, request);
+            return this.Result(result);
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddCharityOrganization([FromBody] CharityOrganizationRequest request)
+        public async Task<IActionResult> AddCharityOrganization([FromBody] CharityOrganizationCreateRequest request)
         {
             var result = await _charityOrganizationService.AddCharityInformation(request);
             return this.Result(result);

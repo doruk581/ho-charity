@@ -11,7 +11,8 @@ namespace Ho.Charity.Business
 {
     public interface ICharityOrganizationService
     {
-        Task<CharityOrganizationResponse> AddCharityInformation(CharityOrganizationRequest request);
+        IQueryable<CharityOrganization> Get(CharityOrganizationRequest request);
+        Task<CharityOrganizationResponse> AddCharityInformation(CharityOrganizationCreateRequest request);
 
         Task<CharityOrganizationResponse> PatchCharityInformation(UpdateCharityOrganizationRequest request);
 
@@ -36,7 +37,12 @@ namespace Ho.Charity.Business
             _mapper = mapper;
         }
 
-        public async Task<CharityOrganizationResponse> AddCharityInformation(CharityOrganizationRequest request)
+        public IQueryable<CharityOrganization> Get(CharityOrganizationRequest request)
+        {
+            return _dbContext.CharityOrganizations.AsQueryable();
+        }
+
+        public async Task<CharityOrganizationResponse> AddCharityInformation(CharityOrganizationCreateRequest request)
         {
             CharityOrganization charityOrganization = _charityOrganizationFactory.CreateFrom(request);
 

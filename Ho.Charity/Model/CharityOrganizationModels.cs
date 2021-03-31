@@ -1,9 +1,13 @@
 using System;
-using System.ComponentModel.DataAnnotations;
+using HiperRestApiPack;
 
 namespace Ho.Charity.Model
 {
-    public class CharityOrganizationRequest
+    public class CharityOrganizationRequest:PagedRequest
+    {
+       
+    }
+    public class CharityOrganizationCreateRequest
     {
         public string OrganizationName { get; set; }
 
