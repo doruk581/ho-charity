@@ -22,7 +22,7 @@ namespace Ho.Charity.Controller
         public async Task<IActionResult> AddCharityOrganization([FromBody] CharityOrganizationRequest request)
         {
             var result = await _charityOrganizationService.AddCharityInformation(request);
-            return Ok(result);
+            return this.Result(result);
         }
 
         [HttpGet("{id}")]
