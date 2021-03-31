@@ -25,7 +25,7 @@ namespace Ho.Charity.Business
                 OrganizationAuthorizedPersonName = request.OrganizationAuthorizedPersonName,
                 OrganizationAuthorizedPersonSurname = request.OrganizationAuthorizedPersonSurname,
                 OrganizationAuthorizedPersonPhoneNumber = request.OrganizationAuthorizedPersonPhoneNumber,
-                IsActive = true
+                IsActive = false
             };
         }
 
@@ -33,6 +33,7 @@ namespace Ho.Charity.Business
         {
             charityOrganization.MerchantId = request.MerchantId;
             charityOrganization.SubMerchantKey = request.SubMerchantKey;
+            charityOrganization.IsActive = true;
         }
     }
 }
