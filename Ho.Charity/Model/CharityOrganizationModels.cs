@@ -26,6 +26,8 @@ namespace Ho.Charity.Model
         public string TaxOffice { get; set; }
 
         public string TaxNumber { get; set; }
+        
+        public string OrganizationAuthroizedPersonIdentityNumber { get; set; }
     }
 
     public class CharityOrganizationResponse

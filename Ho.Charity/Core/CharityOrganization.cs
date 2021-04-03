@@ -18,6 +18,8 @@ namespace Ho.Charity.Core
         [Required] public string Iban { get; set; }
 
         [Required] public bool IsActive { get; set; }
+        
+        [Required] public string OrganizationAuthorizedPersonIdentityNumber { get; set; }
 
         public string OrganizationAuthorizedPersonName { get; set; }
 
