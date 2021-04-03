@@ -49,6 +49,8 @@ namespace Ho.Charity.Model
         public string Iban { get; set; }
 
         public string OrganizationAuthorizedPersonEmail { get; set; }
+        
+        public string OrganizationAuthorizedPersonIdentityNumber { get; set; }
     }
 
     public class UpdateCharityOrganizationRequest
