@@ -24,7 +24,4 @@
         <PackageReference Include="MassTransit.AspNetCore" Version="7.0.7" />
         <PackageReference Include="MassTransit.Azure.ServiceBus.Core" Version="7.0.7" />
     </ItemGroup>
-    <ItemGroup>
-        <_ContentIncludedByDefault Remove="Properties\launchSettings.json" />
-    </ItemGroup>
 </Project>

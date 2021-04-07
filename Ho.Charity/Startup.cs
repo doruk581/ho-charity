@@ -13,6 +13,7 @@ using Microsoft.OpenApi.Models;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using HiperRestApiPack;
+using Microsoft.ApplicationInsights.Extensibility;
 
 namespace Ho.Charity
 {
@@ -61,6 +62,15 @@ namespace Ho.Charity
             {
                 c.SwaggerDoc("v1", new OpenApiInfo {Title = "Hunting Owl Services Charity", Version = "v1"});
             });
+            services.AddHttpContextAccessor();
+            #region Application Insights
+
+            services.AddApplicationInsightsTelemetry();
+            services.AddApplicationInsightsKubernetesEnricher();
+            services.AddSingleton<ITelemetryInitializer, TelemetryInitializer>();
+            services.AddApplicationInsightsTelemetryProcessor<HealthCheckFilter>();
+
+            #endregion
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
