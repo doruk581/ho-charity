@@ -25,7 +25,7 @@ namespace Ho.Charity.Business
                 OrganizationAuthorizedPersonName = request.OrganizationAuthorizedPersonName,
                 OrganizationAuthorizedPersonSurname = request.OrganizationAuthorizedPersonSurname,
                 OrganizationAuthorizedPersonPhoneNumber = request.OrganizationAuthorizedPersonPhoneNumber,
-                OrganizationAuthorizedPersonIdentityNumber = request.OrganizationAuthroizedPersonIdentityNumber,
+                OrganizationAuthorizedPersonIdentityNumber = request.OrganizationAuthorizedPersonIdentityNumber,
                 IsActive = false
             };
         }
