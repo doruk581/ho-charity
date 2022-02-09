@@ -33,7 +33,6 @@ namespace Ho.Charity.Business
         public void ReConstituteFrom(CharityOrganization charityOrganization, UpdateCharityOrganizationRequest request)
         {
             charityOrganization.MerchantId = request.MerchantId;
-            charityOrganization.SubMerchantKey = request.SubMerchantKey;
             charityOrganization.IsActive = true;
         }
     }

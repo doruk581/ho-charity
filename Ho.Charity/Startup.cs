@@ -60,9 +60,10 @@ namespace Ho.Charity
 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo {Title = "Hunting Owl Services Charity", Version = "v1"});
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Hunting Owl Services Charity", Version = "v1" });
             });
             services.AddHttpContextAccessor();
+
             #region Application Insights
 
             services.AddApplicationInsightsTelemetry();

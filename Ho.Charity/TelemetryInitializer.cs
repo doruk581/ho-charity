@@ -22,6 +22,7 @@ namespace Ho.Charity
                 throw new ArgumentNullException(nameof(httpContextAccessor));
             _webHostEnvironment = webHostEnvironment;
         }
+
         public void Initialize(ITelemetry telemetry)
         {
             if (string.IsNullOrEmpty(telemetry.Context.Cloud.RoleName))
@@ -30,7 +31,7 @@ namespace Ho.Charity
                 telemetry.Context.Cloud.RoleName = "Services SRV";
                 telemetry.Context.Cloud.RoleInstance = "Services SRV";
             }
-            
+
             if (telemetry is not RequestTelemetry requestTelemetry) return;
 
             var claims = _httpContextAccessor.HttpContext.User.Claims;

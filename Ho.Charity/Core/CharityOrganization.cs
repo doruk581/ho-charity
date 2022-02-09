@@ -5,7 +5,7 @@ namespace Ho.Charity.Core
 {
     public class CharityOrganization
     {
-        [Key] public Guid Id { get; set; } // subMerchantExternalId in Iyzico side
+        [Key] public Guid Id { get; set; }
 
         [Required] public string OrganizationName { get; set; }
 
@@ -18,7 +18,7 @@ namespace Ho.Charity.Core
         [Required] public string Iban { get; set; }
 
         [Required] public bool IsActive { get; set; }
-        
+
         [Required] public string OrganizationAuthorizedPersonIdentityNumber { get; set; }
 
         public string OrganizationAuthorizedPersonName { get; set; }
@@ -28,8 +28,6 @@ namespace Ho.Charity.Core
         public string TaxOffice { get; set; }
 
         public string TaxNumber { get; set; }
-
-        public string SubMerchantKey { get; set; }
 
         public string MerchantId { get; set; }
     }
