@@ -4,14 +4,16 @@ using Ho.Charity.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Ho.Charity.Migrations
 {
     [DbContext(typeof(CharityOrganizationDbContext))]
-    partial class CharityOrganizationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220221151317_OrganizationAuthorizedPersonIdentityNumberColumnChanged")]
+    partial class OrganizationAuthorizedPersonIdentityNumberColumnChanged
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

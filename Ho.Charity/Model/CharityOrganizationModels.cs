@@ -49,6 +49,9 @@ namespace Ho.Charity.Model
         public string OrganizationAuthorizedPersonEmail { get; set; }
 
         public string OrganizationAuthorizedPersonIdentityNumber { get; set; }
+        
+        public string OrganizationAuthorizedPersonPhoneNumber { get; set; }
+
     }
 
     public class UpdateCharityOrganizationRequest

@@ -11,7 +11,7 @@ namespace Ho.Charity.Core
 
         [Required] public string OrganizationAuthorizedPersonEmail { get; set; }
 
-        public string OrganizationAuthorizedPersonPhoneNumber { get; set; }
+        [Required]public string OrganizationAuthorizedPersonPhoneNumber { get; set; }
 
         [Required] public string Address { get; set; }
 
